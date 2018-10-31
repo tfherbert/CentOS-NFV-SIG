@@ -12,7 +12,8 @@ set -e
 PWD=`pwd`
 mkdir -p $PWD/rpmbuild/{BUILD,RPMS,SOURCES,SPECS}
 cp centos-release-nfv-common.spec $PWD/rpmbuild/SPECS
-cp RPM-GPG-KEY-CentOS-SIG-NFV $PWD/rpmbuild/SOURCES 
+cp RPM-GPG-KEY-CentOS-SIG-NFV $PWD/rpmbuild/SOURCES
+cp COPYING CentOS-nfv-common.repo $PWD/rpmbuild/SOURCES
 
 rpmbuild -bs --define "%_topdir $PWD/rpmbuild" $PWD/centos-release-nfv-common.spec
 
