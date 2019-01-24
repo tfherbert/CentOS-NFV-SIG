@@ -1,8 +1,8 @@
 Summary: Common release file to establish shared metadata for CentOS NFV SIG
 Name: centos-release-nfv-common
 Epoch: 0
-Version: 2
-Release: 1%{?dist}
+Version: 1
+Release: 3%{?dist}
 License: GPL
 Group: System Environment/Base
 Source0: RPM-GPG-KEY-CentOS-SIG-NFV
@@ -11,7 +11,7 @@ URL: http://wiki.centos.org/SpecialInterestGroup/NFV
 BuildArch: noarch
 
 Provides: centos-release-nfv-common
-Requires: centos-release
+Requires: centos-release-scl-rh
 
 BuildRoot: %{_tmppath}/%{name}-root
 
@@ -36,8 +36,10 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/yum.repos.d/CentOS-nfv-common.repo
 
 %changelog
-* Wed Nov 7 2018 Thomas F Herbert <therbert@redhat.com> - 2-1
-- Version 2 added nfv common repo
+* Fri Nov 9 2018 Thomas F Herbert <therbert@redhat.com> - 1-3
+- Added requirement for scl for devtoolset-7
+* Wed Oct 31 2018 Thomas F Herbert <therbert@redhat.com> - 1-2
+- Added nfv common repo
 * Thu Mar 1 2018 Thomas F Herbert <therbert@redhat.com> - 1-1
 - Basic setup with the gpg key
 - Derived from the CentOS Virtualization SIG

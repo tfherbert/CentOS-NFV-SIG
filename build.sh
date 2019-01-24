@@ -15,6 +15,6 @@ cp centos-release-nfv-common.spec $PWD/rpmbuild/SPECS
 cp RPM-GPG-KEY-CentOS-SIG-NFV $PWD/rpmbuild/SOURCES
 cp COPYING CentOS-nfv-common.repo $PWD/rpmbuild/SOURCES
 
-rpmbuild -bs --define "%_topdir $PWD/rpmbuild" $PWD/centos-release-nfv-common.spec
+rpmbuild -bs --define "%_topdir $PWD/rpmbuild" --define "dist .el7.centos" $PWD/centos-release-nfv-common.spec
 
 exit 0
