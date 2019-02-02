@@ -2,7 +2,7 @@ Summary: Common release file to establish shared metadata for CentOS NFV SIG
 Name: centos-release-nfv-common
 Epoch: 0
 Version: 1
-Release: 3%{?dist}
+Release: 5%{?dist}
 License: GPL
 Group: System Environment/Base
 Source0: RPM-GPG-KEY-CentOS-SIG-NFV
@@ -36,6 +36,10 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %{_sysconfdir}/yum.repos.d/CentOS-nfv-common.repo
 
 %changelog
+* Sat Feb 2 2019 Thomas F Herbert <therbert@redhat.com> - 1-5
+- Restored previous search path for testing repo.
+* Fri Feb 1 2019 Thomas F Herbert <therbert@redhat.com> - 1-4
+- Fixed bad search path in repo.
 * Fri Nov 9 2018 Thomas F Herbert <therbert@redhat.com> - 1-3
 - Added requirement for scl for devtoolset-7
 * Wed Oct 31 2018 Thomas F Herbert <therbert@redhat.com> - 1-2
